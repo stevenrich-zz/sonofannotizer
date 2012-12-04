@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @son_of_annotizer.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @son_of_annotizer.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @son_of_annotizer.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_son_of_annotizer_path(@son_of_annotizer) %> |
+<%= link_to 'Back', son_of_annotizers_path %>

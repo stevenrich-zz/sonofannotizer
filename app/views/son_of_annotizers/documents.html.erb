@@ -1,0 +1,6 @@
+<h2>Documents:</h2>
+<% @documents.each do | document | %>
+
+<img src="<%= document.resources.thumbnail %>"><br/><%= link_to document.title, "/notes/#{document.document_id}", :remote=>true, 'data-update-target'=>'notes' %>
+<hr/>
+<% end %>

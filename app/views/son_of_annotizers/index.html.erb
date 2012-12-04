@@ -1,0 +1,75 @@
+
+<script src="http://s3.documentcloud.org/notes/loader.js"></script>
+
+<body style="background-color: #336699">
+<div style="background-color: #336699">
+<div style="text-align: center"><img src="https://s3.amazonaws.com/data.columbiamissourian.com/title.png" /></div>
+<div style="background-color: #FFFFFF; position:relative; width: 1200px; height: 1200px; margin-left: auto; margin-right: auto">
+
+
+<div style="width:150px; height:1190px; background-color: lightBlue; position: absolute; right: 5px; top: 5px">
+
+<h2> Projects:</h2>
+
+<% @projects.each do | project | %>
+<hr>
+<%= link_to project.title, "/documents/#{project.project_id}", :remote=>true, 'data-update-target'=>'documents' %>
+<% end %>
+
+
+
+</div>
+<div id="columns">
+<div id="documents" style="background-color: lightBlue; position:absolute; left:890px; top:5px; width: 150px; height: 1190px; overflow-y:scroll;">
+<h2> Documents:</h2>
+</div>
+
+<div id="notes" style="background-color: lightBlue; position:absolute; left:585px; top:5px; width: 300px; height: 1190px;">
+<h2>Notes:</h2>
+</div>
+
+<div id="text" style="background-color: lightGrey; position:absolute; left:5px; top:5px; width: 575px; height: 1190px; overflow-y: scroll;">
+<h2> Text:</h2>
+<script type="text/javascript">
+function changeText(){
+  var userInput = document.getElementById('userInput').value;
+  document.getElementById('article').innerHTML = userInput;
+}
+</script>
+<p><b id='article'> </p> 
+<textarea id='userInput' style="height: 200px;" value='Enter Text Here'></textarea>
+<input type='button' onclick='changeText()' value='Submit Text'/>
+<input type='button' onclick=' ' value='ANNOTIZE ME, CAPN'/>
+
+<script language=javascript>
+function SelText()
+{
+    var txt = '';
+     if (window.getSelection)
+    {
+        txt = window.getSelection();
+     }
+    else if (document.getSelection)
+    {
+        txt = document.getSelection();
+            }
+    else if (document.selection)
+    {
+        txt = document.selection.createRange().text;
+            }
+    else return;
+document.aform.selectedtext.value =  txt;
+}
+</script>
+<input type="button" value="Get selection" onmousedown="SelText()"> 
+<form name=aform >
+<textarea name="selectedtext" rows="5" cols="20"></textarea>
+</form>
+
+
+
+
+
+</div>
+
+</div>

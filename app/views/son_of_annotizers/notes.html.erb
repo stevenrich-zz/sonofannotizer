@@ -1,0 +1,7 @@
+<h2>Notes:</h2>
+<% @document.annotations.each do | note | %>
+<a href="#">X</a>
+<div id="DC-note-<%= note.note_id %>" class="DC-note-container close"></div>
+<a href="#" class="note" data-note-id="<%= note.note_id %>" data-document-id="<%= @document.document_id.split('-').first %>"><b><%= note.title %></b></a>
+<hr/>
+<% end %>
